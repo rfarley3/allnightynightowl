@@ -43,6 +43,13 @@ Since the timer varies slightly, and the AVR clock is not in sync with the machi
 
 Use gcc-avr to cross compile a tiny C program (hex included in this repo). And then use avrdude (via brew on Mac OS X) to write the AVR. I used an USBTinyISP2 to write the AVR over USB, and a bread board to connect the UTI2's 6 wire cable to the AVR. All compile and write scripts included in this repo.
 
+For help setting up your toolchain, go (here)[http://maxembedded.com/2015/06/setting-up-avr-gcc-toolchain-on-linux-and-mac-os-x/]. For posterity, here's how I installed the toolchain on my OS X box:
+```
+brew tap osx-cross/avr
+brew install avr-libc
+brew install avrdude --with-usb
+```
+
 ## Wiring it up
 
 To keep things as simple as possible, let's do this in 3 wires. First, solder a wire to a post associated with a single sound, and connect the other side of it to PWM0/PB0 (pin 5) on the AVR.
